@@ -38,3 +38,8 @@ int main() {
 
     return 0;
 }
+
+// Time complexity = O(log n)
+// Space complexity = O(1)
+
+
