@@ -2,10 +2,10 @@
 using namespace std;
 
 void selectionSort(int arr[], int n) {
-    for(int i = 0; i<n-1; i++) {
-        int  minIndex = i;
-
-        for(int j = i+1; j<n ; j++) {
+    for(int i=0 ; i<n-1 ; i++) {            // because only n-1 reounds 
+        int minIndex = i;
+        
+        for(int j=i+1 ; j<n ; j++) {
             if(arr[j] < arr[minIndex]) {
                 minIndex = j;
             }
@@ -15,7 +15,7 @@ void selectionSort(int arr[], int n) {
     return;
 }
 
-// // In descending order
+// In descending order              --> Will it work ?
 // void selectionSort(int arr[], int n) {
 //     for(int i = 0 ; i<n-1 ; i++) {
 //         int maxIndex = i;
@@ -30,7 +30,7 @@ void selectionSort(int arr[], int n) {
 // }
 
 void printArray(int arr[], int n) {
-    for(int i = 0; i<n; i++) {
+    for(int i=n-1 ; i>=0 ; i--) {
         cout << arr[i] << " ";
     }
     return;
