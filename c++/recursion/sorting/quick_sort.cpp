@@ -12,11 +12,11 @@ int partition(int arr[], int start, int end) {
         }
     }
 
-    // right index of pivot 
+    // correct index of pivot 
     int pivotIndex = start + count;
     swap(arr[pivotIndex], arr[start]);
 
-    // see left and right part 
+    // See left and right part that they are sorted or not , if not sort it
     int i = start, j = end;
 
     while(i < pivotIndex && j > pivotIndex) {
@@ -24,14 +24,13 @@ int partition(int arr[], int start, int end) {
             i++;
         }
 
-        while(arr[j] > pivot) {
+        while(arr[j] > pivot)  {
             j--;
         }
 
         if(i < pivotIndex && j > pivotIndex) {
             swap(arr[i++], arr[j--]);
         }
-
         return pivotIndex;
     }
 }
@@ -42,7 +41,7 @@ void quickSort(int *arr, int start, int end) {
         return;
     }
 
-    // Let's Partition
+    // Let's partition
     int p = partition(arr, start, end);
 
     // left part sorting
@@ -50,7 +49,7 @@ void quickSort(int *arr, int start, int end) {
 
     // right part sorting
     quickSort(arr, p+1, end);
-    // return;
+    return;
 }
 
 int main() {

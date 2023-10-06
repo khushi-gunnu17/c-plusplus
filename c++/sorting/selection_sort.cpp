@@ -2,7 +2,7 @@
 using namespace std;
 
 void selectionSort(int arr[], int n) {
-    for(int i=0 ; i<n-1 ; i++) {            // because only n-1 reounds 
+    for(int i=0 ; i<n-1 ; i++) {            // because only n-1 rounds here
         int minIndex = i;
         
         for(int j=i+1 ; j<n ; j++) {

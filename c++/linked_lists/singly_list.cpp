@@ -50,10 +50,10 @@ void insertAtTail(Node* &tail, int data) {
     tail = temp;
 }
 
-void insertAtPosition(Node* &head, int position, int d) {
-
+void insertAtPosition(Node* &tail, Node* &head, int position, int data) {
+    // inserting at start 
     if(position == 1) {
-        insertAtHead(head, d);
+        insertAtHead(head, data);
         return;
     }
 
@@ -65,12 +65,19 @@ void insertAtPosition(Node* &head, int position, int d) {
         cnt++;
     }
 
-    // Creating a node for d
-    Node* nodeToInsert = new Node(d);
+    // inserting at last position 
+    if(temp -> next == NULL) {
+        insertAtTail(tail, data);
+        return;
+    }
+
+    // Creating a node for data
+    Node* nodeToInsert = new Node(data);
     nodeToInsert -> next = temp -> next;
-    temp  -> next = nodeToInsert;
+    temp -> next = nodeToInsert;
 }
 
+// traverse a linked list 
 void print(Node* &head) {
     Node* temp = head;
 
@@ -85,11 +92,12 @@ int main() {
 
     // created a new node
     Node* node1 = new Node(10);       // In heap   // Last element
-    // cout << node1 -> data << endl;
-    // cout << node1 -> next << endl;
+    cout << node1 -> data << endl;
+    cout << node1 -> next << endl;
 
-    // head pointed to node 1
+    // head pointed to node 1 at the starting
     Node* head = node1;
+    // tail pointed to node 1 at the starting 
     Node* tail = node1;
 
     print(head);
@@ -102,7 +110,7 @@ int main() {
     insertAtTail(tail, 45);
     insertAtTail(tail, 76);
 
-    insertAtPosition(head, 3, 23);
+    insertAtPosition(tail, head, 3, 23);
     print(head);
 
     return 0;
