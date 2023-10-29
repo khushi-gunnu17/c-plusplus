@@ -17,6 +17,8 @@ Types of linked lists =
 --> circular doubly LL 
 */
 
+// Insertion at any position in a linked list.
+
 #include <iostream>
 using namespace std;
 
@@ -29,6 +31,17 @@ class Node {
     Node(int data) {
         this -> data = data;
         this -> next = NULL;
+    }
+
+    // destructor           // Didn't understand 
+    ~Node() {
+        int value = this -> data;
+        // memory free 
+        if(this -> next == NULL) {
+            delete next;
+            this -> next = NULL;
+        }
+        cout << "Memory is free for node with data " << value << endl;
     }
 };
 
@@ -88,6 +101,33 @@ void print(Node* &head) {
     cout << endl;
 }
 
+// deleting in a linked list 
+
+void deleteNode(int position, Node* &head) {
+    // deleting first or start node 
+    if(position == 1) {
+        Node* temp = head;
+        head = head -> next;
+        // memory free start node 
+        delete temp;
+    }
+    else {
+        // deleting any middle or last node 
+        Node* curr = head;
+        Node* prev = NULL;
+
+        int count = 1;
+        while(count <= position) {
+            prev = curr;
+            curr = curr -> next;
+            count++;
+        }
+
+        prev -> next = curr -> next;
+        delete curr;
+    }
+}
+
 int main() {
 
     // created a new node
@@ -103,14 +143,21 @@ int main() {
     print(head);
 
     insertAtHead(head, 12);
-    
     print(head);
 
-    insertAtHead(head, 15);
-    insertAtTail(tail, 45);
-    insertAtTail(tail, 76);
+    insertAtHead(head, 14);
+    print(head);
 
-    insertAtPosition(tail, head, 3, 23);
+    insertAtTail(tail, 87);
+    print(head);
+
+    insertAtPosition(tail, head, 3, 56);
+    print(head);
+
+    cout << "head : " << head -> data << endl;
+    cout << "tail : " << tail -> data << endl;
+
+    deleteNode(1, head);
     print(head);
 
     return 0;
