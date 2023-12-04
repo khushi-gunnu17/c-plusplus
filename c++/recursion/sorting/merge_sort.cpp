@@ -32,7 +32,7 @@ void merge(int *arr, int start, int end) {
     int index2 = 0;
     mainArrayIndex = start;
 
-    while(index1 < len1 && index2 < len2) {
+    while(index1 < len1 && index2 < len2) {         // the sorting takes place here 
         if(first[index1] < second[index2]) {
             arr[mainArrayIndex++] = first[index1++]; 
         } else {
