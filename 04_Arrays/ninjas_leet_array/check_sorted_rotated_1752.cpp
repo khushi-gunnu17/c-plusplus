@@ -5,7 +5,8 @@ bool checkRotatedSorted(int arr[], int n) {
     int count = 0;
 
     for(int i=1; i<n ; i++) {       
-        if(arr[i-1] > arr[i]) {        // comparing the elements for a sudden decrease in the value      
+        if(arr[i-1] > arr[i]) {        
+        // comparing the elements for a sudden decrease in the value 
             count++;
         }
     }
