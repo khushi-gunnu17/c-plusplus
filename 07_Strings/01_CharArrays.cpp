@@ -4,6 +4,7 @@
 // cplusplus reference = string and charArrays 
 
 #include <iostream>
+#include <cstring>
 using namespace std;
 
 void reverse(char name[], int n) {                 // Reversing a string
@@ -35,11 +36,30 @@ int main() {
 
     cout << "your name is : " << name << endl;
 
-    int len = getLength(name);
+    // int len = getLength(name);
+    int len = strlen(name);
     cout << "Length of the string = " << len << endl;
 
     reverse(name, len);
     cout << "your name is : " << name << endl;
     
+
+
+    // comparing the char array.
+    char s1[10] = "khushi";
+
+    int compare = strcmp(s1, name);
+    if(compare) {
+        cout << "the strings are equal." << endl;
+    } else {
+        cout << "the strings are not equal." << endl;
+    }
+
+
+    // coying in the char array
+    char s2[10];
+
+    strcpy(s2, name);
+    cout << "The value of the s2 string is : " << s2 << endl;
     return 0;
 }

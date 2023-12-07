@@ -4,12 +4,12 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-void merge(int nums1[], int n, int nums2[], int m) {
+void merge(int nums1[], int m, int nums2[], int n) {
     // starting from the end of both the arrays;
-    int i = n-1;
-    int j = m-1;
+    int i = m-1;
+    int j = n-1;
 
-    int k = n + m - 1; // index for the merged arrays (nums1)
+    int k = m + n - 1; // index for the merged arrays (nums1)
 
     // Merge from the end to the beginning
     while(i >= 0 && j >= 0) {

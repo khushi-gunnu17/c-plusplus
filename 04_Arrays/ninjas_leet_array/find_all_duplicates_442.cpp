@@ -15,6 +15,7 @@ void findDuplicates(int arr[], int n) {
             arr[index] = -arr[index];
         }
     }
+    return;
 }
 
 int main() {
