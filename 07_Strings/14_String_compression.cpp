@@ -27,6 +27,9 @@ int compress(vector<char>& chars) {
                 }
             }
             i=j;
+
+            // chars.erase(chars.begin()+ansIndex,chars.end());
+            // return chars.size();
         }
         return ansIndex;
     }
@@ -48,3 +51,6 @@ int main() {
 }
 
 // working in leetcode only
+
+// Time complexity = O(n)
+// space complexity = O(1)
