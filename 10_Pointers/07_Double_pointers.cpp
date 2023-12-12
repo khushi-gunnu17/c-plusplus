@@ -6,6 +6,7 @@ int main() {
     int *ptr1 = &i;
     int **ptr2 = &ptr1;
     int ***ptr3 = &ptr2;
+    int ****ptr4 = &ptr3;
 
     cout << "Address of i is : " << ptr1 << endl;
     cout << "Address of ptr1 is : " << &ptr1 << endl;
@@ -21,3 +22,7 @@ int main() {
 
     return 0;
 }
+
+// why int * and not something like poniter * ?
+// --> which type of data it is.
+// --> how much bytes to be considered ?

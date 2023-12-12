@@ -1,6 +1,8 @@
 #include <iostream>
 using namespace std;
 
+// Differences in int arr and char ch 
+
 int main() {
 
     int arr[5] = {1,2,3,4,5};
@@ -8,9 +10,9 @@ int main() {
 
     cout << "1st case = " << endl;
     cout << arr << endl;    // Address got printed
-    cout << ch << endl;     // content gets printed
-    cout << endl;
-    // cout behaviour is different here in both the cases.
+    cout << ch << endl << endl;     // content gets printed
+    // cout behaviour is different here in both the cases of int arr and char ch.
+    // different implementation for both of them.
 
     cout << "2nd case = " << endl;
     int *ptr = &arr[0];     // arr, &arr
@@ -27,9 +29,8 @@ int main() {
     cout << p << endl;        //  here the values get stored until null character doesn't appear to the cout.
 
     // Not to be done 
-    // char arr[6] = "pqrst"; 
+    // char character[6] = "pqrst"; 
     // char *pointer = "pqrst";
-
 
     return 0;
 }
