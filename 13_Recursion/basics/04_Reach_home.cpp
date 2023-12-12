@@ -3,7 +3,8 @@ using namespace std;
 
 void reachHome(int src, int dest) {
 
-    cout << "source : " << src << ", Destination : " << dest << endl;
+    cout << "source : " << src << " , Destination : " << dest << endl;
+
     if(src == dest) {       // Base case
         cout << "I have reached home." << endl;
         return;
@@ -11,7 +12,7 @@ void reachHome(int src, int dest) {
 
     src++;      // Processing
     
-    reachHome(src , dest);
+    reachHome(src , dest);      // recursive call
     
 }
 

@@ -2,13 +2,17 @@
 using namespace std;
 
 int print(int n) {
+
+    // base case
     if(n == 0) {
         return 0;
     }
 
+    // recursive relation
     print(n-1);     // This line will execute first for all the values.
 
-    cout << n << endl;  // Tail recursion
+    // processing part
+    cout << n << endl;  // head recursion
 }
 
 

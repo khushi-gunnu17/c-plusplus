@@ -12,7 +12,8 @@ int countDistinctWays(long long int nStairs) {
     }
 
     // Recursive case
-    long long int ans = countDistinctWays(nStairs-1) + countDistinctWays(nStairs-2);
+    int ans = countDistinctWays(nStairs-1) + countDistinctWays(nStairs-2);
+
     return ans;
 }
 

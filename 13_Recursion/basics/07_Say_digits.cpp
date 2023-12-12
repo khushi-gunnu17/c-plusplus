@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-void sayDigits(int n, string arr[]) {
+void sayDigits(int n, string str[]) {
 
     // Base case 
     if(n == 0) {
@@ -13,8 +13,8 @@ void sayDigits(int n, string arr[]) {
     n = n/10;
 
     // Recursive call
-    sayDigits(n, arr);
-    cout << arr[digit] << " ";      // one time number got printed
+    sayDigits(n, str);
+    cout << str[digit] << " ";      // one time number got printed
 }
 
 int main() {
@@ -22,10 +22,10 @@ int main() {
     cout << "Enter the value : ";
     cin >> n;
 
-    string arr[n] = {"zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"};
+    string str[n] = {"zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"};
 
     cout << endl;
-    sayDigits(n, arr);
+    sayDigits(n, str);
     cout << endl;
 
     return 0;
