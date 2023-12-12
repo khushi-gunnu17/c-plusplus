@@ -3,15 +3,16 @@
 #include <iostream>
 using namespace std;
 
+// In inline function, wherevr there is a function call , it gets replaced with the function body.
 // Inline function can only be executed for one line function body, for more than three lines, it will never work.
-inline int getMax(int& x, int& y) {
+inline int getMax(int &x, int &y) {
     return (x > y) ? x : y;
 }
 
 void func(int a, int b) {
     a++;
     b++;
-    cout << a << " " << b << endl;
+    cout << a << " " << b << endl << endl;
 }
 
 int main() {

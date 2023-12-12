@@ -3,11 +3,13 @@
 using namespace std;
 
 int main() {
-
+    
     int row;
+    cout << "Enter the size of the row : ";
     cin >> row;
 
     int col;
+    cout << "Enter the size of the col : ";
     cin >> col;
 
     // Creating a 2D array
@@ -17,6 +19,8 @@ int main() {
         arr[i] = new int[col];
     }
 
+
+    // taking and printing the 2D array
     for(int i = 0; i<row ; i++) {
         for(int j=0; j<col ; j++) {
             cin >> arr[i][j];
@@ -31,11 +35,12 @@ int main() {
 
     // If you are using heap, you must finally free the memory allways.
 
+    // --> first inside columns will be deleted otherwise the memory will get leaked if we delete the statring rows i.e, int * [row].
     for(int i=0; i<row ; i++) {
         delete [] arr[i];
     }
-
     delete []arr;
+
     return 0;
 }
 
