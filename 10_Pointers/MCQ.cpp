@@ -17,15 +17,15 @@ using namespace std;
 
 // twentieth algo. =
 
-void square(int *p) {
-    int a = 70;
-    p = &a;
-    *p = (*p) * (*p);
-}
+// void square(int *p) {
+//     int a = 70;
+//     p = &a;
+//     *p = (*p) * (*p);
+// }
 
-void increment(int **p) {
-    ++(**p);
-}
+// void increment(int **p) {
+//     ++(**p);
+// }
 
 int main() {  
 
@@ -38,6 +38,9 @@ int main() {
     // cout << first << " " <<  second << endl;
 
 
+
+
+
     // second algo. =
 
     // int first = 6;
@@ -45,6 +48,10 @@ int main() {
     // int *q = p;
     // (*q)++;
     // cout << first << endl;
+
+
+
+
 
 
     // third algo. =
@@ -55,12 +62,20 @@ int main() {
     // cout << first << endl;
 
 
+
+
+
+
     // fourth algo. =
 
     // int *ptr = 0;
     // int first = 110;
     // *ptr = first;           // for ptr = &first , it will run, otherwise not
     // cout << *ptr << endl;
+
+
+
+
 
 
     // fifth algo. =
@@ -72,6 +87,10 @@ int main() {
     // cout << first << " " << second << endl;
 
 
+
+
+
+
     // sixth algo. =
     // float f = 12.5;
     // float p = 21.5;
@@ -81,11 +100,21 @@ int main() {
     // cout << *ptr << " " << f << " " << p << endl;
 
 
+
+
+
+
+
     // seventh algo. =
 
     // int arr[5];
     // int *ptr;
     // cout << sizeof(arr) << " " << sizeof(ptr) << endl;
+
+
+
+
+
 
 
     // eighth algo. =
@@ -94,16 +123,36 @@ int main() {
     // cout << *(arr) << " " << *(arr + 1) << endl;
 
 
+
+
+
+
+
+
+
     // ninth algo. =
 
     // int arr[6] = {11, 12, 31};
     // cout << arr << " " << &arr << endl; 
 
 
+
+
+
+
+
+
+
     // tenth algo. =
 
     // int arr[6] = {11, 12, 31};
     // cout << (arr + 1) << endl;
+
+
+
+
+
+
 
 
     // eleventh algo. =
@@ -113,10 +162,23 @@ int main() {
     // cout << p[2] << endl;        // *(p + 2)
 
 
+
+
+
+
+
+
+
     // twelft algo. =
 
     // int arr[] = {11, 12, 13, 14, 15};
     // cout << *(arr) << " " << *(arr + 3) << endl;
+
+
+
+
+
+
 
 
     // thirteenth algo. =
@@ -125,6 +187,12 @@ int main() {
     // int *ptr = arr++;   // changing value should be modifiable.    // arr = arr + 1; (wrong)
     //                     // symbol table cannot be changed.
     // cout << *ptr << endl; 
+
+
+
+
+
+
 
     
     // fourteenth algo.
@@ -135,11 +203,22 @@ int main() {
     // cout << *ptr << endl; 
 
 
+
+
+
+
+
+
     // fifteenth algo. = 
 
     // char arr[] = "abcde";
     // char *p = &arr[0];
     // cout << p << endl;      // Address won't be printed over here.
+
+
+
+
+
 
 
     // sixteenth algo. = 
@@ -150,11 +229,24 @@ int main() {
     // cout << p << endl;
 
 
+
+
+
+
+
+
+
     // seventeenth algo. = 
 
     // char str[] = "khushi";
     // char *p = str;
     // cout << str[0] << " " << p[0] << endl;
+
+
+
+
+
+
 
 
     // eighteenth algo. =
@@ -164,11 +256,23 @@ int main() {
     // cout << i << endl;
 
 
+
+
+
+
+
+
     // nineteenth algo. =
 
     // int arr[] = {11, 12, 13, 14};
     // fun(arr + 1);
     // cout << arr[0] << endl;
+
+
+
+
+
+
 
 
     // twentieth algo. =
@@ -178,6 +282,12 @@ int main() {
     // cout << a << endl;
 
 
+
+
+
+
+
+
     // twenty one algo. =
 
     // int first = 110;
@@ -185,6 +295,12 @@ int main() {
     // int **q = &p;
     // int second = (**q)++ + 9;
     // cout << first << " " << second << endl;
+
+
+
+
+
+
 
 
     // twenty two algo. =
@@ -198,12 +314,19 @@ int main() {
     // cout << first << " " << second << endl;
 
 
+
+
+
+
+
+
+
     // twenty three algo. =
 
-    int num = 110;
-    int *ptr = &num;
-    increment(&ptr);
-    cout << num << endl;
+    // int num = 110;
+    // int *ptr = &num;
+    // increment(&ptr);
+    // cout << num << endl;
 
     return 0;
 }

@@ -10,9 +10,9 @@ int main() {
 
     cout << "Address of i is : " << ptr1 << endl;
     cout << "Address of ptr1 is : " << &ptr1 << endl;
-    cout << "and address : " << ptr2 << endl;
+    cout << "and : " << ptr2 << endl << endl;
 
-    cout << "Value at ptr3 is : " << *ptr3 << endl;
+    cout << "Value at ptr3 is : " << *ptr3 << endl << endl;
 
     cout << "Value of i : " << endl;
     cout << i << endl;

@@ -2,11 +2,11 @@
 using namespace std;
 
 void update(int **ptr2) {
-    // ptr2 = ptr2 + 1;      // No change 
+    // ptr2 = ptr2 + 1;      // No change  --> pass by value , will change the value only here 
 
-    // *ptr2 = *ptr2 + 1;       // Will change 
+    *ptr2 = *ptr2 + 1;       // Will change 
 
-    **ptr2 = **ptr2 + 1;        // Will change 
+    // **ptr2 = **ptr2 + 1;        // Will change 
 }
 
 int main() {
