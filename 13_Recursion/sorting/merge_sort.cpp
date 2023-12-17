@@ -7,6 +7,7 @@
 using namespace std;
 
 void merge(int *arr, int start, int end) {
+
     int mid = start + (end - start)/2;
     int len1 = mid - start + 1;
     int len2 = end - mid;
@@ -85,7 +86,6 @@ int main() {
 // Space complexity = O(n).
 // Time complexity = O(nlogn).
 
-// HW = inversion count, Use indexex to solve this question 
+// HW = inversion count, Use indexes to solve this question 
 
-// Applications for merge sort 
-// in GFG
+// Applications for merge sort in GFG

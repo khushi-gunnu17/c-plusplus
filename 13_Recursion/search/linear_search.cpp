@@ -18,7 +18,8 @@ bool linearSearch(int arr[], int size, int key) {
 
     if(arr[0] == key) {
         return true;
-    } else {
+    } 
+    else {
         bool remainingPArt = linearSearch(arr + 1, size - 1 , key);
         return remainingPArt;
     }

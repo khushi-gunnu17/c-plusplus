@@ -2,7 +2,7 @@
 using namespace std;
 
 // Pass by refernce 
-void reverseString(string& str, int i, int j) {
+void reverseString(string &str, int i, int j) {
     // Base case
     if(i>j) {
         return;
@@ -19,7 +19,7 @@ void reverseString(string& str, int i, int j) {
 int main() {
     string name = "khushi";
     
-    reverseString(name, 0, name.length()-1);
+    reverseString ( name, 0, name.length()-1 );
     cout << name << endl;
     return 0;
 }

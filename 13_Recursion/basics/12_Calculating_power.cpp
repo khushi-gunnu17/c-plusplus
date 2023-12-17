@@ -14,18 +14,22 @@ int power(int a, int b) {
     // Rceursive call
     int ans = power(a, b/2);
 
-    if( b % 2 == 0) {
+    if(b % 2 == 0) {    // even 
         return ans * ans;
-    } else {
+    } 
+    else {      // odd
         return a * ans * ans;
     }
+    return -1;
 }
 
 int main() {
+
     int a, b;
     cin >> a >> b;
 
     int ans = power(a, b);
     cout << "The answer is : " << ans << endl;
+    
     return 0;
 }

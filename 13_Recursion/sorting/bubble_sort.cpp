@@ -7,14 +7,15 @@ void bubbleSort(int *arr, int size) {
         return;
     }
 
+    // processing part
     // One case solved - placing the largest element in the end.
-    for(int i=0; i<size; i++) {
+    for(int i=0 ; i<size ; i++) {
         if(arr[i] > arr[i+1]) {
             swap(arr[i], arr[i+1]);
         }
     }
 
-    // Recursive call
+    // Recursive call - tail recursion 
     bubbleSort(arr, size-1);
     return;
 }

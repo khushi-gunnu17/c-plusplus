@@ -49,6 +49,7 @@ void quickSort(int *arr, int start, int end) {
 
     // right part sorting
     quickSort(arr, p+1, end);
+    
     return;
 }
 

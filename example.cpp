@@ -1,21 +1,73 @@
 #include <iostream>
-#include <vector>
 using namespace std;
 
-int main(int n) {
+int partition(int arr[], int start, int end) {
+
+    int pivot = arr[start];
+
     int count = 0;
-    vector <bool> prime(n+1, true);
-
-    prime[0] = prime[1] = false;
-
-    for(int i=2 ; i<n ; i++) {
-        if(prime[i]) {
+    for(int i=start+1 ; i<=end ; i++) {
+        if(arr[i] <= pivot) {
             count++;
-
-            for(int j=2*i ; j<n ; j += i) {
-                prime[j] = 0;
-            }
         }
     }
+
+    // correct index of pivot 
+    int pivotIndex = start + count;
+    swap(arr[pivotIndex], arr[start]);
+
+    // See left and right part that they are sorted or not , if not sort it
+    int i = start, j = end;
+
+    while(i < pivotIndex && j > pivotIndex) {
+        while(arr[i] <= pivot) {
+            i++;
+        }
+
+        while(arr[j] > pivot)  {
+            j--;
+        }
+
+        if(i < pivotIndex && j > pivotIndex) {
+            swap(arr[i++], arr[j--]);
+        }
+        return pivotIndex;
+    }
+}
+
+void quickSort(int *arr, int start, int end) {
+    // Base case
+    if(start >= end) {
+        return;
+    }
+
+    // Let's partition
+    int p = partition(arr, start, end);
+
+    // left part sorting
+    quickSort(arr, start, p-1);
+
+    // right part sorting
+    quickSort(arr, p+1, end);
+    
+    return;
+}
+
+int main() {
+    int array[10] = {10, 9, 8, 7, 6, 5, 4, 3, 2, 1};
+    int n = 10;
+    quickSort(array, 0, n-1);
+
+    for(int i=0 ; i<n ; i++) {
+        cout << array[i] << " ";
+    }   cout << endl;
     return 0;
 }
+
+// Space complexity = O(n)
+// Time complexity = O(nlogn)
+// Worst case = O(nsquare)
+
+// HW
+// In - place sorting technique ??
+// stable algorithm ??

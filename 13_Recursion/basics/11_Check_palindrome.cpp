@@ -9,13 +9,15 @@ bool checkPalindrome(string s, int i, int j) {
 
     if(s[i] == s[j]) {
         return checkPalindrome(s, i + 1, j - 1);
-    } else {
+    } 
+    else {
         return false;
     }
 }
 
 int main() {
     string name = "abcba";
+    
     bool isPalindrome = checkPalindrome(name, 0, name.length()-1);
     cout << isPalindrome << endl;
 
@@ -26,3 +28,5 @@ int main() {
     }
     return 0;
 }
+
+// Optimise this code using one pointer approach i.e, one variable usage 
