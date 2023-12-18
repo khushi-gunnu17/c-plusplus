@@ -49,7 +49,7 @@ void quickSort(int *arr, int start, int end) {
 
     // right part sorting
     quickSort(arr, p+1, end);
-    
+
     return;
 }
 
@@ -65,9 +65,31 @@ int main() {
 }
 
 // Space complexity = O(n)
-// Time complexity = O(nlogn)
-// Worst case = O(nsquare)
 
-// HW
+// Time complexity 
+// best case = O(nlogn)
+// Worst case = O(n square) // O of n sqaure
+// average case = O(nlogn)
+
+
 // In - place sorting technique ??
+/*
+Yes, QuickSort is an in-place sorting algorithm. An in-place sorting 
+algorithm is one that doesn't require additional memory space to 
+perform the sorting operation and instead operates directly on the 
+input data structure. QuickSort achieves this by partitioning the input 
+array and then recursively sorting the subarrays without the need for 
+additional memory.
+*/
+
+
 // stable algorithm ??
+/*
+QuickSort, as originally designed by Tony Hoare, does not guarantee the 
+preservation of the relative order of equal elements. During the 
+partitioning step, the algorithm may swap elements that are equal, 
+leading to a loss of stability. However, there are variations and 
+optimizations of QuickSort that can be modified to make it stable, but 
+the standard or basic implementation is usually unstable.
+
+*/
