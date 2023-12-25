@@ -17,7 +17,7 @@ using namespace std;
 //optimized solution
 
 void bubbleSort(int arr[], int n) {
-    for(int i=1 ; i<n ; i++) {          // for round 1 to n-1
+    for(int i=1 ; i<n ; i++) {          // here the values of i denotes round and not particularly the rows
         bool swapped = false;
 
         for(int j=0 ; j<n-i ; j++) {        // process element till n-i th index 
