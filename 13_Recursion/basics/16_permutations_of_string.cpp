@@ -1,3 +1,5 @@
+// Permutations of a string
+
 #include <iostream>
 #include <vector>
 using namespace std;
@@ -25,6 +27,23 @@ vector<vector<int>> permute(vector<int>& nums) {
 }
 
 int main() {
+
+    return 0;
+}
+
+
+#include <iostream>
+#include <vector>
+using namespace std;
+
+vector<string> generatePermutations(string &str) {
+    vector<vector <int>> ans;
+    
+}
+
+int main() {
+
+    
 
     return 0;
 }
