@@ -39,13 +39,14 @@ int main() {
     cout << "Health is : " << h1.getHealth() << endl;      
 
 
-    // Dynamically allocated
+    // Dynamically allocation
     Hero *h2 = new Hero;
     h2 -> setHealth(70);
     h2 -> setLevel('A');
-    cout << "Level is : " << (*h2).level << endl;           // By both ways you can access the data
+    cout << "Level is : " << (*h2).level << endl;           
     cout << "Health is : " << (*h2).getHealth() << endl; 
 
+    // By both ways you can access the data
     cout << "Level is : " << h2 -> level << endl;
     cout << "Health is : " << h2 -> getHealth() << endl; 
 

@@ -5,12 +5,12 @@
 // --> instance of class , an example or case
 
 #include <iostream>
-// #include "Hero.cpp"
+// #include "00_Hero.cpp"
 // Accessing the class from another file
 using namespace std;
 
 class Hero {
-    // properties\ Data member
+    // properties\ Data members
     private:
     // char name[100];
     int health;
@@ -52,6 +52,7 @@ int main() {
     // --> bcoz of padding and greeding alignment  (HW)
     // Empty class size is 1 byte
 
+    // garbage value will be set to it as we have not set the value.
     cout << "Ramesh Health is : " << Ramesh.getHealth() << endl;    
 
     char name = 'A';
@@ -61,6 +62,7 @@ int main() {
 
     cout << "Health is : " << Ramesh.getHealth() << endl;          
     // cout << "Level is : " << Ramesh.level << endl;
+
     return 0;
 }
 
@@ -68,3 +70,6 @@ int main() {
 // --> public
 // --> private
 // --> protected
+
+
+// Getter and setter are used when some parameters are privately marked.

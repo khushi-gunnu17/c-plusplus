@@ -1,4 +1,4 @@
-// Wrapping up data members and its related functionality into a sibhle entity(class) is called encaspsulation.
+// Wrapping up data members and its related functionality into a single entity(class) is called encaspsulation.
 // Fully encapsulated class : all data members are marked private.
 // Information hiding / Data Hiding
 

@@ -1,4 +1,5 @@
-// Static keyword creates such a data member which belongs to a class and doesn't need to be called in the main function. it gets called directly with the initialisation of the object.
+// Default copy constructor creates shallow copy. (execution in main).
+// copy constructor in functions above main creates deep copy
 
 #include <iostream>
 #include <string.h>
@@ -11,29 +12,23 @@ class Hero {
     public:
     char *name;
     char level;
-    static int timeToComplete;
 
     Hero() {
         name = new char[100];
-        cout << "Constructor called . " << endl;
-    }
-
-    // Parameterised constructor
-    Hero(int health, char level) {
-        cout << "this -> " << this << endl;
-        this -> level = level;
-        this -> health = health;
+        cout << "Simple Constructor called . " << endl;
     }
 
     // Copy constructor   
     // In deep copy case, entirely different copy is created.
     Hero(Hero& temp) {
 
+        // here, we have removed the dependency on the same address by creating a deep copy.
         char *ch = new char[strlen(temp.name) + 1];
         strcpy(ch, temp.name);
         this -> name = ch;
 
         cout << "copy constructor called . " << endl;
+        this -> name = temp.name;
         this -> health = temp.health;
         this -> level = temp.level;
     }
@@ -64,38 +59,46 @@ class Hero {
     void setName(char name[]) {
         strcpy(this -> name, name);
     }
-
-    static int random() {
-        return timeToComplete;
-    }
-
-    ~Hero() {
-        cout << "destructor called ." << endl;
-    }
 };
 
-int Hero :: timeToComplete = 5;
+
 
 int main() {
-    
-    cout << Hero :: timeToComplete << endl;
 
-    Hero a;
-    cout << a.timeToComplete << endl;
+    Hero hero1;
+    hero1.setHealth(50);
+    hero1.setLevel('R');
+    char name[10] = "khushi";
+    hero1.setName(name);
 
-    Hero b;
-    b.timeToComplete = 19;
+    hero1.print();
 
-    cout << a.timeToComplete << endl;
-    cout << b.timeToComplete << endl;
+    // Use default copy constructor here for shallow copy otherwise deep will be printed.
+    Hero hero2(hero1);
+    // Hero hero2 = hero1;      // same 
+    hero2.print();
 
-    cout << "Accessing static function : " << endl;
-    cout << Hero::random() << endl;
+
+    // In shallow copy, same memory gets accessed if you are using the same memory address for the variables, like through pointers.
+    hero1.name[0] = 'G';
+    hero1.level = 'T';
+    hero1.print();
+    hero2.print();
+
+
+    // Copy assignment operator 
+    hero1 = hero2;
+    hero1.print();      // hero2 values will be printed here
+    hero2.print();
 
     return 0;
 }
 
-// In static functions -
-// --> objects don't need to be created.
-// --> it doesn't have a static keyword.
-// --> they can only access static members.
+/*
+In copy assignment operator : 
+a = b;
+means -->
+a.health = b.health;
+a.level = b.health;
+a.name = b.name;
+*/
