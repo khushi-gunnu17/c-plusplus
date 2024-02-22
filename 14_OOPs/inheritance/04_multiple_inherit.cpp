@@ -8,7 +8,7 @@ class Animal {
     int height;
 
     void bark() {
-        cout << "I am an animal. " << endl;
+        cout << "Barking." << endl;
     }
 };
 
@@ -17,7 +17,7 @@ class Human {
     string colour;
     
     void speak() {
-        cout << "I am a human." << endl;
+        cout << "Speaking." << endl;
     }
 };
 

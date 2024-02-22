@@ -1,6 +1,8 @@
 #include <iostream>
 using namespace std;
 
+// one class serves as parent class for more than one class.
+
 class A {
     public:
     void func1() {
