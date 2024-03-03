@@ -1,4 +1,5 @@
 #include <iostream>
+#include <map>
 using namespace std;
 
 class Node {
@@ -58,7 +59,28 @@ bool circular_or_not(Node* head) {
 }
 
 
+bool detectLoop(Node* head) {
+    if(head == NULL) {
+        return false;
+    }
 
+    map<Node*, bool> visited;
+
+    Node* temp = head;
+
+    while(temp != NULL) {
+        // cycle is present
+        if(visited[temp] == true) {
+            cout << "Loop present on element : " << temp -> data << endl;
+            return true;
+        }
+
+        visited[temp] = true;
+        temp = temp -> next;
+    }
+
+    return false;
+}
 
 
 int main() {
@@ -77,10 +99,19 @@ int main() {
     print(head);
 
     if (circular_or_not(head)) {
-        cout << "Linked list is circular in nature.";
+        cout << "Linked list is circular in nature." << endl;
     } else {
-        cout << "The list is not circular.";
+        cout << "The list is not circular." << endl;
     }
+
+
+    // tail -> next = head -> next -> next;
+
+    // if(detectLoop(head)) {
+    //     cout << "Loop is present." << endl;
+    // } else {
+    //     cout << "Loop is not present" << endl;
+    // }
 
     return 0;
 }
@@ -88,6 +119,3 @@ int main() {
 
 // T.C = O(n)
 // S.C. = O(1)
-
-
-// Do it with Map standard template library 
