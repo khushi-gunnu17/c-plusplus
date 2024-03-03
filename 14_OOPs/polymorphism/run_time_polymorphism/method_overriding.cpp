@@ -1,5 +1,5 @@
 // Run time poly. is also known as dynamic polymorphism.
-// function overriding
+// function / Method overriding
 // Run time poly. is depended on inheritance 
 // func name and arg must be same 
 

@@ -1,3 +1,4 @@
+// polymorphism = existing in different forms.
 // Compile time poly. is also known as static polymorphism.
 
 #include <iostream>
@@ -24,6 +25,6 @@ int main() {
     A obj;
     obj.sayHello();
     obj.sayHello("mansi");
-    obj.sayHello("nanu", 10);
+    obj.sayHello("nanu", 11);
     return 0;
 }

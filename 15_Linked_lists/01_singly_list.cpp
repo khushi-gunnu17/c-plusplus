@@ -37,34 +37,36 @@ class Node {
     ~Node() {
         int value = this -> data;
         // memory free 
-        if(this -> next == NULL) {
+        if(this -> next != NULL) {
             delete next;
             this -> next = NULL;
         }
-        cout << "Memory is free for node with data " << value << endl;
+        cout << "Memory is free for node with data " << value << endl << endl;
     }
 };
 
-// by reference because we want to make changes in the original list
+// by reference of the head, because we want to make changes in the original list and not make a new copy of the original one.
 void insertAtHead(Node* &head, int data) {
 
-    // Create a new node
+    // Creating a new node here
     Node *temp = new Node(data);    // in heap
+
     temp -> next = head;
     head = temp;
 
 }
 
 void insertAtTail(Node* &tail, int data) {
-    // Create a new node
+    // Creating a new node here.
     Node *temp = new Node(data);    // in heap
+
     tail -> next = temp;
     // tail = tail -> next;
     tail = temp;
 }
 
 void insertAtPosition(Node* &tail, Node* &head, int position, int data) {
-    // inserting at start 
+    // inserting at the start 
     if(position == 1) {
         insertAtHead(head, data);
         return;
@@ -73,6 +75,7 @@ void insertAtPosition(Node* &tail, Node* &head, int position, int data) {
     Node* temp = head;
     int cnt = 1;
 
+    // The purpose of subtracting 1 in the condition count < position - 1 is to ensure that the loop stops when count becomes equal to position - 1. This is because, in the context of inserting a node at a specific position, you want to stop at the node just before the desired position so that you can correctly link the new node with the surrounding nodes during the insertion process. 
     while(cnt < position - 1) {
         temp = temp -> next;
         cnt++;
@@ -84,8 +87,9 @@ void insertAtPosition(Node* &tail, Node* &head, int position, int data) {
         return;
     }
 
-    // Creating a node for data
+    // Creating a node for the data part
     Node* nodeToInsert = new Node(data);
+
     nodeToInsert -> next = temp -> next;
     temp -> next = nodeToInsert;
 }
@@ -103,24 +107,31 @@ void print(Node* &head) {
 
 // deleting in a linked list 
 
-void deleteNode(int position, Node* &head) {
+void deleteNode(int position, Node* &head, Node* &tail) {
+
     // deleting first or start node 
     if(position == 1) {
         Node* temp = head;
         head = head -> next;
-        // memory free start node 
+        // freeing the memory of the start node.
         delete temp;
     }
+
     else {
         // deleting any middle or last node 
         Node* curr = head;
         Node* prev = NULL;
 
         int count = 1;
-        while(count <= position) {
+        while(count < position) {
             prev = curr;
             curr = curr -> next;
             count++;
+        }
+
+        if(curr -> next == NULL) {
+            tail = prev;
+            tail -> next = NULL;
         }
 
         prev -> next = curr -> next;
@@ -157,8 +168,11 @@ int main() {
     cout << "head : " << head -> data << endl;
     cout << "tail : " << tail -> data << endl;
 
-    deleteNode(1, head);
+    deleteNode(5, head, tail);
     print(head);
+
+    cout << "head : " << head -> data << endl;
+    cout << "tail : " << tail -> data << endl;
 
     return 0;
 }
