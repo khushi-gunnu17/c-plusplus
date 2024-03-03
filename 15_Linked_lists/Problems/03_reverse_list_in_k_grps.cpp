@@ -100,3 +100,6 @@ int main() {
 
     return 0;
 }
+
+// T.C. = O(n)
+// S.C. = O(n)

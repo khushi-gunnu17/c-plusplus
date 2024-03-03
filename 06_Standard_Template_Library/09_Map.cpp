@@ -40,7 +40,7 @@ int main() {
     // Insert , erase, find and count complexities of all these are O(log n).
     // in unordered map compl. is O(1).
 
-    auto it = m.find(5);
+    auto it = m.find(1);
     for(auto i = it ; i != m.end() ; i++) {
         cout << (*i).first << endl;
     } cout << endl;
