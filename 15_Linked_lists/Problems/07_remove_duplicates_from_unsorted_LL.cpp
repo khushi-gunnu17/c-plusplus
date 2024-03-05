@@ -39,7 +39,31 @@ void print(Node* &head) {
 }
 
 
+void remove_duplicates(Node* head) {
+    Node* curr = head;
+    while (curr!= NULL) {
+        
+        Node* temp = curr -> next;
+        Node* prev = curr;
+        
+        while( temp != NULL) {
+            if(curr -> data == temp -> data) {
+                prev -> next = temp -> next;
+                delete temp;
+                temp = prev -> next;
+            } else {
+                prev = temp;
+                temp = temp -> next;
+            }
+        }
+        curr = curr -> next;
+    }
+}
 
+// Another step :
+// Step 1 : Sort the LL
+// Step 2 : Make use of the prev algorithm of sorted LL one.
+// T.C. = O(nlogn)  S.C. = O(1)
 
 
 int main() {
@@ -61,6 +85,14 @@ int main() {
     InsertAtTail(tail, 4);
 
     print(head);
+
+    remove_duplicates(head);
+    print(head);
     
     return 0;
 }
+
+// T.C. = O(nsquared)   (2 loops)
+// S.C. = O(1) 
+
+// H.W. = I have one circular linked list, split it into two halves. 
