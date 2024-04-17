@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-class twoStacks {
+class twoStack {
     int *arr;
     int top1;
     int top2;
@@ -10,7 +10,7 @@ class twoStacks {
     public:
 
     // initialize twoStacks
-    twoStacks(int s) {
+    twoStack(int s) {
         this -> size = s;
         top1 = -1;
         top2 = s;
@@ -20,11 +20,11 @@ class twoStacks {
     // push in stack 1
     void push1(int num) {
         // atleast an empty space should be present 
-        if(top2 - top1 > 1) {
+        if((top2 - top1) > 1) {
             top1++;
             arr[top1] = num;
         } else {
-            cout << "Stack overflow." << endl;
+            cout << "Stack Overflow" << endl;
         }
     }
 
@@ -62,9 +62,48 @@ class twoStacks {
             return -1;
         }
     }
+
+    void displayStacks() {
+        cout << "Stack 1 : ";
+        for(int i = 0; i <= top1; i++) {
+            cout << arr[i] << " ";
+        } 
+        cout << endl;
+
+        cout << "Stack 2 : ";
+        for (int i = size - 1; i >= top2 ; i--) {
+            cout << arr[i] << " ";
+        }
+        cout << endl;
+    }
+
+    ~twoStack() {
+        delete[] arr;
+    }
 };
 
 int main() {
+
+    twoStack s1(10);
+
+    s1.push1(10);
+    s1.push1(2);
+    s1.push1(78);
+    s1.push1(45);
+    s1.push1(34);
+    s1.push1(12);
+    s1.push2(46);
+    s1.push2(78);
+    s1.push2(90);
+    s1.push2(36);
+
+    s1.displayStacks();
+    
+    s1.pop1();
+    s1.pop2();
+
+    cout << "After popping : " << endl;
+    s1.displayStacks();
 
     return 0;
 }
