@@ -52,5 +52,5 @@ int main() {
     return 0;
 }
 
-// TC = 0(n)
-// SC = 0(n)
+// TC = O(n)
+// SC = O(n)

@@ -29,5 +29,5 @@ int main() {
     return 0;
 }
 
-// T.C. = 0(n)
-// S.C. = 0(n)
+// T.C. = O(n)
+// S.C. = O(n)
