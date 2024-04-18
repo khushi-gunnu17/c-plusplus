@@ -28,7 +28,7 @@ class Stack {
         if(top >= 0) {
             top--;
         } else {
-            cout << "Stack overflow" << endl;
+            cout << "Stack Underflow" << endl;
         }
     }
 
